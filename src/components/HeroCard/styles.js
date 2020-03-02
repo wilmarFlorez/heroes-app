@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { fadeIn } from '../../styles/animation'
 
 export const Card = styled.article`
-  ${fadeIn({ time: '.8s' })}
+  ${fadeIn({ time: '.5s' })}
   background-color: #fff;
   border: .5px solid #bbbbbb;
   margin-bottom: 1em;

@@ -28,7 +28,8 @@ export const ListOfHeroCards = () => {
     }
     return (
       currentHeroes.map((heroe, key) =>
-        <HeroCard key={key} {...heroe} id={key} />)
+        <HeroCard key={key} {...heroe} id={key} />
+      )
     )
   }
 
