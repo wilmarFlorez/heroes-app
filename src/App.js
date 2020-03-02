@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyle } from './GlobalStyles'
+import { GlobalStyle } from './styles/GlobalStyles'
 import { ListOfHeroCards } from './components/ListOfHeroCards'
 import { Logo } from './components/Logo'
 

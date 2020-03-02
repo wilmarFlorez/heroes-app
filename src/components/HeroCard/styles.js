@@ -1,4 +1,12 @@
 import styled from 'styled-components'
+import { fadeIn } from '../../styles/animation'
+
+export const Card = styled.article`
+  ${fadeIn({ time: '.8s' })}
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+  margin-bottom: 1em;
+`
 
 export const ImgWrapper = styled.div`
   display: block;

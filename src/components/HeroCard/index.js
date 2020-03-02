@@ -5,7 +5,8 @@ import {
   Img, Button,
   Title,
   WrapperDescription,
-  DescriptionItem
+  DescriptionItem,
+  Card
 } from './styles'
 
 const DEFAULT_IMAGE = 'https://www.superherodb.com/pictures2/portraits/10/100/10451.jpg'
@@ -16,7 +17,7 @@ const SIZE_ICON = '25px'
 
 export const HeroCard = ({ id, likes = 0, picture = DEFAULT_IMAGE, name = NAME, info = INFO, publisher = PUBLISHER }) => {
   return (
-    <article>
+    <Card>
       <a href={`/hero/${id}`}>
         <ImgWrapper>
           <Img src={picture} alt='Hero image' />
@@ -34,6 +35,6 @@ export const HeroCard = ({ id, likes = 0, picture = DEFAULT_IMAGE, name = NAME, 
           <DescriptionItem><span>Publisher:</span> {publisher}</DescriptionItem>
         </WrapperDescription>
       </a>
-    </article>
+    </Card>
   )
 }
