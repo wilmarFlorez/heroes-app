@@ -4,8 +4,10 @@ import { fadeIn } from '../../styles/animation'
 export const Card = styled.article`
   ${fadeIn({ time: '.8s' })}
   background-color: #fff;
-  border: 1px solid #bbbbbb;
+  border: .5px solid #bbbbbb;
   margin-bottom: 1em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
 `
 
 export const ImgWrapper = styled.div`
