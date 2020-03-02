@@ -23,7 +23,7 @@ export const Title = styled.div`
   width: 100%;
   height: 50px;
   position: absolute;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, .75);
   color: #fff;
   font-size: 1.3em;
   font-weight: 400;

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
 import {
   ImgWrapper,
@@ -17,26 +18,8 @@ const SIZE_ICON = '30px'
 
 export const HeroCard = ({ id, likes = 0, picture = DEFAULT_IMAGE, name = NAME, info = INFO, publisher = PUBLISHER }) => {
   const key = `like-${id}`
-
-  const [liked, setLiked] = useState(() => {
-    try {
-      const like = window.localStorage.getItem(key)
-      return like
-    } catch (e) {
-      return false
-    }
-  })
-
+  const [liked, setLiked] = useLocalStorage(key, false)
   const FavoriteIcon = liked ? MdFavorite : MdFavoriteBorder
-
-  const setLocalStorage = value => {
-    try {
-      window.localStorage.setItem(key, value)
-      setLiked(value)
-    } catch (e) {
-      console.log(e)
-    }
-  }
 
   return (
     <Card>
@@ -46,11 +29,10 @@ export const HeroCard = ({ id, likes = 0, picture = DEFAULT_IMAGE, name = NAME, 
           <Title>{name}</Title>
         </ImgWrapper>
       </a>
-      <Button onClick={() => setLocalStorage(!liked)}>
+      <Button onClick={() => setLiked(!liked)}>
         <FavoriteIcon size={SIZE_ICON} />
       </Button>
       <WrapperDescription>
-        <DescriptionItem>{likes} Me gusta</DescriptionItem>
         <DescriptionItem><span>Description: </span>{info}</DescriptionItem>
         <DescriptionItem><span>Publisher:</span> {publisher}</DescriptionItem>
       </WrapperDescription>
