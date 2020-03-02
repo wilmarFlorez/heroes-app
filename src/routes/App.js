@@ -1,9 +1,9 @@
 import React from 'react'
-import { ListOfHeroCards } from '../components/ListOfHeroCards'
+import { ListOfHeroCards } from '../containers/ListOfHeroCards'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { NotFound } from '../containers/NotFound'
 import { Layout } from '../components/Layout'
-import { HeroeDetail } from '../components/HeroeDetail'
+import { HeroeDetail } from '../containers/HeroeDetail'
 
 export const App = () => (
   <BrowserRouter>

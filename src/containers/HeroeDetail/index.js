@@ -1,8 +1,8 @@
 import React from 'react'
 import { useInitialState } from '../../hooks/useInitialState'
-import { HeroCard } from '../HeroCard'
-import { PageLoading } from '../PageLoading'
-import { PageError } from '../PageError'
+import { HeroCard } from '../../components/HeroCard'
+import { PageLoading } from '../../components/PageLoading'
+import { PageError } from '../../components/PageError'
 import { WrapperHero } from './styles'
 
 export const HeroeDetail = (props) => {

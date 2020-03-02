@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { HeroCard } from '../HeroCard'
+import { HeroCard } from '../../components/HeroCard'
 import { useInitialState } from '../../hooks/useInitialState'
-import { PageLoading } from '../PageLoading'
-import { PageError } from '../PageError'
-import { Pagination } from '../Pagination'
+import { PageLoading } from '../../components/PageLoading'
+import { PageError } from '../../components/PageError'
+import { Pagination } from '../../components/Pagination'
 import { Grid } from './styles'
 
 export const ListOfHeroCards = () => {
