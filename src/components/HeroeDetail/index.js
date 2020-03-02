@@ -3,6 +3,7 @@ import { useInitialState } from '../../hooks/useInitialState'
 import { HeroCard } from '../HeroCard'
 import { PageLoading } from '../PageLoading'
 import { PageError } from '../PageError'
+import { WrapperHero } from './styles'
 
 export const HeroeDetail = (props) => {
   const API = 'http://35.162.46.100/superheroes/'
@@ -25,8 +26,8 @@ export const HeroeDetail = (props) => {
   }
 
   return (
-    <div>
+    <WrapperHero>
       {setHero()}
-    </div>
+    </WrapperHero>
   )
 }

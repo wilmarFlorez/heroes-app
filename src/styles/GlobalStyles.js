@@ -21,8 +21,7 @@ a {
 body {
   background: #fefefe;
   height: 100vh;
-  margin: 0 auto;
-  max-width: 500px;
+  margin: 0 auto;  
   overscroll-behavior: none;
   width: 100%; 
 }

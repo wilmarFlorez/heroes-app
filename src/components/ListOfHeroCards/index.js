@@ -4,6 +4,7 @@ import { useInitialState } from '../../hooks/useInitialState'
 import { PageLoading } from '../PageLoading'
 import { PageError } from '../PageError'
 import { Pagination } from '../Pagination'
+import { Grid } from './styles'
 
 export const ListOfHeroCards = () => {
   const API = 'http://35.162.46.100/superheroes/'
@@ -25,14 +26,17 @@ export const ListOfHeroCards = () => {
     if (error) {
       return <PageError message={error} />
     }
-
-    return currentHeroes.map((heroe, key) =>
-      <HeroCard key={key} {...heroe} id={key} />)
+    return (
+      currentHeroes.map((heroe, key) =>
+        <HeroCard key={key} {...heroe} id={key} />)
+    )
   }
 
   return (
     <>
-      {setListItems()}
+      <Grid>
+        {setListItems()}
+      </Grid>
       <Pagination
         itemsPerPage={itemsPerPage}
         totalItems={heroes.length}

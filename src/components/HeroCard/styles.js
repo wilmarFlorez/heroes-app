@@ -8,6 +8,7 @@ export const Card = styled.article`
   margin-bottom: 1em;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
+  max-width: 500px;
 `
 
 export const ImgWrapper = styled.div`
