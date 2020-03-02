@@ -1,33 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { HeroCard } from '../HeroCard'
-
-const useCategoryData = () => {
-  const [heroes, setHeroes] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(function () {
-    setLoading(true)
-    window.fetch('http://35.162.46.100/superheroes/')
-      .then(res => res.json())
-      .then(response => {
-        setHeroes(response)
-        setLoading(false)
-      })
-  }, [])
-
-  return { heroes, loading }
-}
+import { useInitialState } from '../../hooks/useInitialState'
 
 export const ListOfHeroCards = () => {
-  const { heroes, loading } = useCategoryData()
+  const API = 'http://35.162.46.100/superheroes/'
+  const [heroes, loading, error] = useInitialState(API)
 
-  if (loading) {
-    return 'Loading...'
+  const setListItems = () => {
+    if (loading) {
+      return 'Loading...'
+    }
+
+    if (error) {
+      return 'Informacion no disponible.'
+    }
+
+    return heroes.map((heroe, key) =>
+      <HeroCard key={key} {...heroe} id={key} />)
   }
 
   return (
-    <ul>
-      {heroes.map((heroe, key) => <HeroCard key={key} {...heroe} id={key} />)}
-    </ul>
+    <>
+      {setListItems()}
+    </>
   )
 }
