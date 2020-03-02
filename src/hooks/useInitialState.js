@@ -16,7 +16,7 @@ export const useInitialState = (API) => {
         setLoading(false)
       })
       .catch(function (e) {
-        setError(true)
+        setError('Información no disponible!')
         setLoading(false)
       })
   }, [])

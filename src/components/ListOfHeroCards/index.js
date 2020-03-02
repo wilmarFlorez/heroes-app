@@ -2,6 +2,7 @@ import React from 'react'
 import { HeroCard } from '../HeroCard'
 import { useInitialState } from '../../hooks/useInitialState'
 import { PageLoading } from '../PageLoading'
+import { PageError } from '../PageError'
 
 export const ListOfHeroCards = () => {
   const API = 'http://35.162.46.100/superheroes/'
@@ -13,7 +14,7 @@ export const ListOfHeroCards = () => {
     }
 
     if (error) {
-      return 'Informacion no disponible.'
+      return <PageError message={error} />
     }
 
     return heroes.map((heroe, key) =>
