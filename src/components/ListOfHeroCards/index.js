@@ -1,6 +1,7 @@
 import React from 'react'
 import { HeroCard } from '../HeroCard'
 import { useInitialState } from '../../hooks/useInitialState'
+import { PageLoading } from '../PageLoading'
 
 export const ListOfHeroCards = () => {
   const API = 'http://35.162.46.100/superheroes/'
@@ -8,7 +9,7 @@ export const ListOfHeroCards = () => {
 
   const setListItems = () => {
     if (loading) {
-      return 'Loading...'
+      return <PageLoading />
     }
 
     if (error) {
